@@ -20,7 +20,18 @@ clean-targets:
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
+  +meta:
+    alerts_config:
+      channel: "idan-playground"
+      slack_group_alerts_by: table
+
   elementary_tutorial:
     materialized: table
     staging:
       materialized: view
+
+  elementary:
+    +schema: elementary
+
+vars:
+  "dbt_date:time_zone": "Asia/Jerusalem"
