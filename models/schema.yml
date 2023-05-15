@@ -1,18 +1,18 @@
 version: 2
 
 models:
-  - name: schema_change
-    columns:
-      - name: order_id
-        data_type: integer
-      - name: customer_id
-        data_type: integer
-    tests:
-      - elementary.schema_changes_from_baseline:
-          tags: ["schema_base"]
-      - elementary.schema_changes_from_baseline:
-          tags: ["schema_base"]
-          enforce_types: true
+- name: schema_change
+  columns:
+  - name: order_id
+    data_type: integer
+  - name: customer_id
+    data_type: integer
+  tests:
+  - elementary.schema_changes_from_baseline:
+      tags: [schema_base]
+  - elementary.schema_changes_from_baseline:
+      tags: [schema_base]
+      enforce_types: true
 
   # - name: error_model
   #   description: We use this model to create error runs and tests
@@ -22,179 +22,174 @@ models:
   #         - uniques:
   #             tags: ["error_test", "regular_tests"]
 
-  - name: customers
-    meta:
-      owner: "idan"
-      alerts_config:
-        channel: "idan-playground"
-    description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
-    config:
-      tags: "{{ 'one' if 1 == 2 else 'threeee' }}"
-      elementary:
-        timestamp_column: "signup_date"
-    tests:
+- name: customers
+  meta:
+    owner: idan
+    alerts_config:
+      channel: idan-playground
+  description: This table has basic information about a customer, as well as some
+    derived facts based on a customer's orders
+  config:
+    tags: "{{ 'one' if 1 == 2 else 'threeee' }}"
+    elementary:
+      timestamp_column: signup_date
+  tests:
       # - dbt_expectations.expect_row_values_to_have_recent_data:
       #     datepart: day
       #     interval: 1
       #     tags: ["test_bug"]
-      - elementary.table_anomalies:
-          tags: ["error_test", "regular_tests"]
-          meta:
-            bla: blue
-            subscribers: ["@oravidov", "maayan"]
-            alert_fields: ["table", "column", "description"]
-            channel: "{{ 'one' if 1 == 2 else 'two' }}"
+  - elementary.table_anomalies:
+      tags: [error_test, regular_tests]
+      meta:
+        bla: blue
+        subscribers: ['@oravidov', maayan]
+        alert_fields: [table, column, description]
+        channel: "{{ 'one' if 1 == 2 else 'two' }}"
             # channel: "AAA"
-          table_anomalies:
-            - row_count
-          time_bucket:
-            period: day
-            count: 1
-      - elementary.schema_changes
-      - elementary.all_columns_anomalies:
-          column_anomalies: ["null_count"]
+      table_anomalies:
+      - row_count
+      time_bucket:
+        period: day
+        count: 1
+  - elementary.schema_changes
+  - elementary.all_columns_anomalies:
+      column_anomalies: [null_count]
 
-    columns:
-      - name: customer_id
-        description: This is a unique identifier for a customer
-        tests:
-          - elementary.column_anomalies:
-              # config:
-              #   severity: "warn"
-              column_anomalies: ["null_percent"]
-          - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 10
-              # config:
-              #   severity: warn
-
-      - name: first_name
-        description: Customer's first name. PII.
-        tests:
-          # - dbt_expectations.expect_column_to_exist
-          - dbt.unique:
-              # config:
-              #   severity: "warn"
-              tags: ["elem"]
-              meta:
-                alerts_config:
-                  subscribers: "@idan.shavit"
-
-      - name: last_name
-        description: Customer's last name. PII.
-        tests:
-          # - dbt_expectations.expect_column_to_exist
-          - dbt.unique:
-              config:
-                severity: "warn"
-              tags: ["elem"]
-
-      - name: first_order
-        description: Date (UTC) of a customer's first order
-
-      - name: most_recent_order
-        description: Date (UTC) of a customer's most recent order
-
-      - name: number_of_orders
-        description: Count of the number of orders a customer has placed
-
-      - name: customer_lifetime_value
-        description: Total value (AUD) of a customer's orders
-
-      - name: customer_email
-        description: Customer's email. PII.
-
-      - name: signup_date
-        description: Date (UTC) of a customer's signup to the online shop.
-        tests:
-          - dbt_utils.accepted_range:
-              min_value: "'2024-01-01 00:00:00'"
-              max_value: "{{ dbt_date.now() }}"
-              # config:
-              #   severity: warn
-
-  - name: orders
-    meta:
-      owner: "@oravidov"
-    description: This table has basic information about orders, as well as some derived facts based on payments
-    config:
-      tags: []
-      elementary:
-        timestamp_column: "order_date"
-
+  columns:
+  - name: customer_id
+    description: This is a unique identifier for a customer
     tests:
-      - elementary.dimension_anomalies:
-          tags: ["dimension"]
-          meta:
-            alert_fields: ["test_parameters"]
-          dimensions:
-            - status
+    - elementary.column_anomalies:
+              # config:
+              #   severity: "warn"
+        column_anomalies: [null_percent]
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 10
+              # config:
+              #   severity: warn
 
-    columns:
-      - name: order_id
-        description: This is a unique identifier for an order
+  - name: first_name
+    description: Customer's first name. PII.
+    tests:
+          # - dbt_expectations.expect_column_to_exist
+    - dbt.unique:
+              # config:
+              #   severity: "warn"
+        tags: [elem]
+        meta:
+          alerts_config:
+            subscribers: '@idan.shavit'
 
-      - name: customer_id
-        description: Foreign key to the customers table
+  - name: last_name
+    description: Customer's last name. PII.
+    tests:
+          # - dbt_expectations.expect_column_to_exist
+    - dbt.unique:
+        config:
+          severity: warn
+        tags: [elem]
 
-      - name: order_date
-        description: Date (UTC) that the order was placed
+  - name: first_order
+    description: Date (UTC) of a customer's first order
 
-      - name: status
-        description: '{{ doc("orders_status") }}'
+  - name: most_recent_order
+    description: Date (UTC) of a customer's most recent order
 
-      - name: amount
-        description: Total amount (AUD) of the order
+  - name: number_of_orders
+    description: Count of the number of orders a customer has placed
 
-      - name: credit_card_amount
-        description: Amount of the order (AUD) paid for by credit card
+  - name: customer_lifetime_value
+    description: Total value (AUD) of a customer's orders
 
-      - name: coupon_amount
-        description: Amount of the order (AUD) paid for by coupon
+  - name: customer_email
+    description: Customer's email. PII.
 
-      - name: bank_transfer_amount
-        description: Amount of the order (AUD) paid for by bank transfer
+  - name: signup_date
+    description: Date (UTC) of a customer's signup to the online shop.
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: "'2024-01-01 00:00:00'"
+        max_value: '{{ dbt_date.now() }}'
+              # config:
+              #   severity: warn
 
-      - name: gift_card_amount
-        description: Amount of the order (AUD) paid for by gift card
+- name: orders
+  meta:
+    owner: '@oravidov'
+  description: This table has basic information about orders, as well as some derived
+    facts based on payments
+  config:
+    tags: []
+    elementary:
+      timestamp_column: order_date
 
-  - name: returned_orders
-    description: This table contains all of the returned orders
-    config:
-      tags: ["finance"]
+  tests: []
+  columns:
+  - name: order_id
+    description: This is a unique identifier for an order
+
+  - name: customer_id
+    description: Foreign key to the customers table
+
+  - name: order_date
+    description: Date (UTC) that the order was placed
+
+  - name: status
+    description: '{{ doc("orders_status") }}'
+
+  - name: amount
+    description: Total amount (AUD) of the order
+
+  - name: credit_card_amount
+    description: Amount of the order (AUD) paid for by credit card
+
+  - name: coupon_amount
+    description: Amount of the order (AUD) paid for by coupon
+
+  - name: bank_transfer_amount
+    description: Amount of the order (AUD) paid for by bank transfer
+
+  - name: gift_card_amount
+    description: Amount of the order (AUD) paid for by gift card
+
+- name: returned_orders
+  description: This table contains all of the returned orders
+  config:
+    tags: [finance]
 
     # tests:
     #   - dbt_expectations.expect_table_column_count_to_be_between:
     #       min_value: 2
     #       max_value: 5
 
-    columns:
-      - name: order_id
-        description: This is a unique identifier for an order
+  columns:
+  - name: order_id
+    description: This is a unique identifier for an order
 
-      - name: customer_id
-        description: Foreign key to the customers table
+  - name: customer_id
+    description: Foreign key to the customers table
 
-      - name: order_date
-        description: Date (UTC) that the order was placed
+  - name: order_date
+    description: Date (UTC) that the order was placed
 
-      - name: status
-        description: '{{ doc("orders_status") }}'
+  - name: status
+    description: '{{ doc("orders_status") }}'
         # tests:
         #   - dbt_expectations.expect_column_values_to_be_in_set:
         #       value_set: ["returned"]
 
-      - name: amount
-        description: Total amount (AUD) of the order
+  - name: amount
+    description: Total amount (AUD) of the order
 
-      - name: credit_card_amount
-        description: Amount of the order (AUD) paid for by credit card
+  - name: credit_card_amount
+    description: Amount of the order (AUD) paid for by credit card
 
-      - name: coupon_amount
-        description: Amount of the order (AUD) paid for by coupon
+  - name: coupon_amount
+    description: Amount of the order (AUD) paid for by coupon
 
-      - name: bank_transfer_amount
-        description: Amount of the order (AUD) paid for by bank transfer
+  - name: bank_transfer_amount
+    description: Amount of the order (AUD) paid for by bank transfer
 
-      - name: gift_card_amount
-        description: Amount of the order (AUD) paid for by gift card
+  - name: gift_card_amount
+    description: Amount of the order (AUD) paid for by gift card
