@@ -1,5 +1,5 @@
 format:
   yaml:
-    sequence: 2
+    sequence: 4
     offset: 2
     mapping: 2
