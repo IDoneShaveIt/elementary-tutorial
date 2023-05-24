@@ -1,29 +1,49 @@
+---
 version: 2
 
 models:
   - name: stg_customers
     config:
-      tags: ["staging", "PII"]
+      tags: [staging, PII]
     columns:
       - name: customer_id
 
   - name: stg_orders
     config:
-      tags: ["staging", "finance"]
+      tags: [staging, finance]
     columns:
       - name: order_id
       - name: status
 
   - name: stg_payments
     config:
-      tags: ["staging", "finance"]
+      tags: [staging, finance]
     columns:
       - name: payment_id
       - name: payment_method
 
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 3
+          where_expression:
+          seasonality:
+          timestamp_column: updated_at
+          config:
+            tags:
+              - finance
+            severity: warn
+          meta:
+            owners:
+              - adam+333@elementary-data.com
+            description: Checking for freshness anomalies by looking at a 1 day period and comparing it to last 14 days
   - name: stg_signups
     config:
-      tags: ["staging", "PII"]
+      tags: [staging, PII]
     columns:
       - name: signup_id
       - name: customer_email
