@@ -198,3 +198,46 @@ models:
 
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
+    tests:
+      - elementary.dimension_anomalies:
+          time_bucket:
+            period: day
+            count: 2
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression: where 1=1
+          seasonality: day_of_week
+          timestamp_column: order_date
+          dimensions:
+            - status
+          anomaly_direction: spike
+          config:
+            tags:
+              - generated
+            severity: error
+          meta:
+            owners:
+              - idan+1@elementary-data.com
+            description: Checking for anomalies in the size and growth of a table by comparing the row count of each 2 days period to the last 14 days
+      - elementary.schema_changes:
+          config:
+            tags:
+              - generated
+            severity: error
+          meta:
+            owners:
+              - idan+1@elementary-data.com
+            description: Checking for anomalies in the size and growth of a table by comparing the row count of each 2 days period to the last 14 days
+    freshness:
+      warn_after:
+        period: day
+        count: 2
+      config:
+        tags:
+          - generated
+      meta:
+        owners:
+          - idan+1@elementary-data.com
+        description: Checking for anomalies in the size and growth of a table by comparing the row count of each 2 days period to the last 14 days
+    loaded_at: updated_at
