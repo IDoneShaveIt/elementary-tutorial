@@ -1,3 +1,4 @@
+---
 version: 2
 
 models:
@@ -9,9 +10,9 @@ models:
         data_type: integer
     tests:
       - elementary.schema_changes_from_baseline:
-          tags: ["schema_base"]
+          tags: [schema_base]
       - elementary.schema_changes_from_baseline:
-          tags: ["schema_base"]
+          tags: [schema_base]
           enforce_types: true
 
   # - name: error_model
@@ -24,25 +25,25 @@ models:
 
   - name: customers
     meta:
-      owner: "idan"
+      owner: idan
       alerts_config:
-        channel: "idan-playground"
+        channel: idan-playground
     description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
     config:
       tags: "{{ 'one' if 1 == 2 else 'threeee' }}"
       elementary:
-        timestamp_column: "signup_date"
+        timestamp_column: signup_date
     tests:
       # - dbt_expectations.expect_row_values_to_have_recent_data:
       #     datepart: day
       #     interval: 1
       #     tags: ["test_bug"]
       - elementary.table_anomalies:
-          tags: ["error_test", "regular_tests"]
+          tags: [error_test, regular_tests]
           meta:
             bla: blue
-            subscribers: ["@oravidov", "maayan"]
-            alert_fields: ["table", "column", "description"]
+            subscribers: ['@oravidov', maayan]
+            alert_fields: [table, column, description]
             channel: "{{ 'one' if 1 == 2 else 'two' }}"
             # channel: "AAA"
           table_anomalies:
@@ -52,7 +53,23 @@ models:
             count: 1
       - elementary.schema_changes
       - elementary.all_columns_anomalies:
-          column_anomalies: ["null_count"]
+          column_anomalies: [null_count]
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression:
+          seasonality: day_of_week
+          timestamp_column: updated_at
+          config:
+            severity: error
+          meta:
+            owners:
+              - hadar+1@elementary-data.com
+            description: Checking for freshness anomalies by looking at a 1 day period and comparing it to last 14 days
 
     columns:
       - name: customer_id
@@ -61,7 +78,7 @@ models:
           - elementary.column_anomalies:
               # config:
               #   severity: "warn"
-              column_anomalies: ["null_percent"]
+              column_anomalies: [null_percent]
           - dbt_utils.accepted_range:
               min_value: 0
               max_value: 10
@@ -75,10 +92,10 @@ models:
           - dbt.unique:
               # config:
               #   severity: "warn"
-              tags: ["elem"]
+              tags: [elem]
               meta:
                 alerts_config:
-                  subscribers: "@idan.shavit"
+                  subscribers: '@idan.shavit'
 
       - name: last_name
         description: Customer's last name. PII.
@@ -86,8 +103,8 @@ models:
           # - dbt_expectations.expect_column_to_exist
           - dbt.unique:
               config:
-                severity: "warn"
-              tags: ["elem"]
+                severity: warn
+              tags: [elem]
 
       - name: first_order
         description: Date (UTC) of a customer's first order
@@ -109,27 +126,43 @@ models:
         tests:
           - dbt_utils.accepted_range:
               min_value: "'2024-01-01 00:00:00'"
-              max_value: "{{ dbt_date.now() }}"
+              max_value: '{{ dbt_date.now() }}'
               # config:
               #   severity: warn
 
   - name: orders
     meta:
-      owner: "@oravidov"
+      owner: '@oravidov'
     description: This table has basic information about orders, as well as some derived facts based on payments
     config:
       tags: []
       elementary:
-        timestamp_column: "order_date"
+        timestamp_column: order_date
 
     tests:
       - elementary.dimension_anomalies:
-          tags: ["dimension"]
+          tags: [dimension]
           meta:
-            alert_fields: ["test_parameters"]
+            alert_fields: [test_parameters]
           dimensions:
             - status
 
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression:
+          seasonality: day_of_week
+          timestamp_column: updated_at
+          config:
+            severity: error
+          meta:
+            owners:
+              - hadar+1@elementary-data.com
+            description: Checking for freshness anomalies by looking at a 1 day period and comparing it to last 14 days
     columns:
       - name: order_id
         description: This is a unique identifier for an order
@@ -161,7 +194,7 @@ models:
   - name: returned_orders
     description: This table contains all of the returned orders
     config:
-      tags: ["finance"]
+      tags: [finance]
 
     # tests:
     #   - dbt_expectations.expect_table_column_count_to_be_between:
@@ -198,3 +231,20 @@ models:
 
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression:
+          seasonality: day_of_week
+          timestamp_column: updated_at
+          config:
+            severity: error
+          meta:
+            owners:
+              - hadar+1@elementary-data.com
+            description: Checking for freshness anomalies by looking at a 1 day period and comparing it to last 14 days
