@@ -3,3 +3,4 @@ format:
     sequence: 4
     offset: 2
     mapping: 2
+    preserve_quotes: True
