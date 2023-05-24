@@ -9,9 +9,9 @@ models:
         data_type: integer
     tests:
       - elementary.schema_changes_from_baseline:
-          tags: ["schema_base"]
+          tags: [schema_base]
       - elementary.schema_changes_from_baseline:
-          tags: ["schema_base"]
+          tags: [schema_base]
           enforce_types: true
 
   # - name: error_model
