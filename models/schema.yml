@@ -130,6 +130,21 @@ models:
           dimensions:
             - status
 
+      - elementary.volume_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression:
+          seasonality:
+          timestamp_column: order_date
+          anomaly_direction:
+          config:
+            severity: error
+          meta:
+            description: Checking for anomaly in the size and growth of a table by comparing the row count of each 1 day period to the last 14 days
     columns:
       - name: order_id
         description: This is a unique identifier for an order
