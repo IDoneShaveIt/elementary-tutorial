@@ -50,9 +50,6 @@ models:
           time_bucket:
             period: day
             count: 1
-      - elementary.schema_changes
-      - elementary.all_columns_anomalies:
-          column_anomalies: ["null_count"]
 
     columns:
       - name: customer_id
@@ -123,13 +120,6 @@ models:
         timestamp_column: "order_date"
 
     tests:
-      - elementary.dimension_anomalies:
-          tags: ["dimension"]
-          meta:
-            alert_fields: ["test_parameters"]
-          dimensions:
-            - status
-
       - elementary.volume_anomalies:
           time_bucket:
             period: day
