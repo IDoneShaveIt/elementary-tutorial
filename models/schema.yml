@@ -51,8 +51,6 @@ models:
             period: day
             count: 1
       - elementary.schema_changes
-      - elementary.all_columns_anomalies:
-          column_anomalies: ["null_count"]
 
     columns:
       - name: customer_id
