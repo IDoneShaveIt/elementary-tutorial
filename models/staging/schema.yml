@@ -21,6 +21,28 @@ models:
       - name: payment_id
       - name: payment_method
 
+    tests:
+      - elementary.dimension_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression: event_name = 'pasten'
+          seasonality: day_of_week
+          timestamp_column: dasdsa
+          dimensions:
+            - platform
+            - country
+            - event_name
+          anomaly_direction: spike
+          config:
+            tags:
+              - adsad
+            severity: warn
+          meta:
+            description: fjsdlfjsldfklj
   - name: stg_signups
     config:
       tags: ["staging", "PII"]
