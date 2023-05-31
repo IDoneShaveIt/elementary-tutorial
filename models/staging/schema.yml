@@ -21,6 +21,16 @@ models:
       - name: payment_id
       - name: payment_method
 
+    tests:
+      - elementary.schema_changes:
+          config:
+            tags:
+              - ;kl;kl
+            severity: error
+          meta:
+            owner:
+              - hfghgf
+            description: Checks for schema changes against an existing baseline
   - name: stg_signups
     config:
       tags: ["staging", "PII"]
