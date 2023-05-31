@@ -53,6 +53,27 @@ models:
       - elementary.schema_changes
       - elementary.all_columns_anomalies:
           column_anomalies: ["null_count"]
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: hour
+            count: 5
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          seasonality: day_of_week
+          timestamp_column: updated_at
+          config:
+            tags:
+              - pasten
+              - bla
+              - or
+            severity: error
+          meta:
+            owner:
+              - hadar+1@elementary-data.com
+              - or
+              - pasten
+            description: 'Checking for freshness anomalies by looking at bla '
 
     columns:
       - name: customer_id
@@ -210,3 +231,25 @@ models:
 
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: hour
+            count: 5
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          seasonality: day_of_week
+          timestamp_column: updated_at
+          config:
+            tags:
+              - pasten
+              - bla
+              - or
+            severity: error
+          meta:
+            owner:
+              - hadar+1@elementary-data.com
+              - or
+              - pasten
+            description: 'Checking for freshness anomalies by looking at bla '
