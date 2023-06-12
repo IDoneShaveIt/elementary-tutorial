@@ -1,0 +1,23 @@
+version: 2
+models:
+  - name: error_model
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 2
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: updated at
+          config:
+            tags:
+              - threeee
+              - fv
+            severity: error
+          meta:
+            owner:
+              - hadar+1@elementary-data.com
+              - idan
+              - mike
+            description: Checking for freshness anomalies by looking at a 2 days period and comparing it to last 14 days
