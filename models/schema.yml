@@ -176,7 +176,7 @@ exposures:
   - name: customers_dashboard
     type: dashboard
     maturity: high
-    url: https://bi.tool/dashboards/1
+    url: https://elementary.demo.customers
     description: >
       All you need to know about Elementary's customers.
     depends_on:
