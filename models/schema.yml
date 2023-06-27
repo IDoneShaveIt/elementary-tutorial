@@ -49,7 +49,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -86,6 +86,24 @@ models:
           dimensions:
             - status
 
+      - elementary.volume_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: order_date
+          anomaly_direction: drop
+          config:
+            tags:
+              - sales
+              - stability
+            severity: warn
+          meta:
+            owner:
+              - or+1337@elementary-data.com
+            description: Checking for drops in the size and growth of a table by comparing the row count of each 1 days period to the last 14 days
     columns:
       - name: order_id
         description: This is a unique identifier for an order
