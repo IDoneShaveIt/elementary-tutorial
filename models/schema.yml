@@ -151,3 +151,39 @@ models:
 
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
+
+
+exposures:
+  - name: orders_dashboard
+    type: application
+    maturity: medium
+    url: https://elementary.demo.orders
+    description: >
+      All you need to know about Elementary's orders.
+    depends_on:
+      - ref('returned_orders')
+      - ref('orders')
+    owner:
+      name: Or
+      email: or@elementary-data.com
+    tags:
+      - sales
+    meta:
+      platform: Tableau
+      workbook: By the Week
+      path: ByTheWeek/Jaffles
+
+  - name: customers_dashboard
+    type: dashboard
+    maturity: high
+    url: https://bi.tool/dashboards/1
+    description: >
+      All you need to know about Elementary's customers.
+    depends_on:
+      - ref('customers')
+    owner:
+      name: Or
+      email: or@elementary-data.com
+    tags:
+      - sales
+      - marketing
