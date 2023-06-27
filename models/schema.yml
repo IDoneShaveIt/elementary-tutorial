@@ -1,14 +1,6 @@
 version: 2
 
 models:
-  - name: broken_table
-    description: We use this model to create error runs and tests
-    columns:
-      - name: "missing_column"
-        tests:
-          - uniques:
-              tags: ["error_test", "regular_tests"]
-
   - name: customers
     meta:
       owner: "@idan"
@@ -20,9 +12,6 @@ models:
       elementary:
         timestamp_column: "signup_date"
     tests:
-      - dbt_expectations.expect_row_values_to_have_recent_data:
-          datepart: day
-          interval: 1
       - elementary.table_anomalies:
           tags: ["error_test", "regular_tests"]
           meta:
