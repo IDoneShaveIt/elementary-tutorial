@@ -1,0 +1,101 @@
+version: 2
+exposures:
+  - name: regional__economy__regional__economy
+    meta:
+      platform: Tableau
+      workbook: Regional
+      path: Regional/Economy/Regional
+    label: Economy
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Regional/Economy
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: regional__globaltemperatures__regional__global_temperatures
+    meta:
+      platform: Tableau
+      workbook: Regional
+      path: Regional/GlobalTemperatures/Regional
+    label: Global Temperatures
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Regional/GlobalTemperatures
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: regional__obesity__regional__obesity
+    meta:
+      platform: Tableau
+      workbook: Regional
+      path: Regional/Obesity/Regional
+    label: Obesity
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Regional/Obesity
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: superstore__commissionmodel__superstore__commission_model
+    meta:
+      platform: Tableau
+      workbook: Superstore
+      path: Superstore/CommissionModel/Superstore
+    label: Commission Model
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Superstore/CommissionModel
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: superstore__customers__superstore__customers
+    meta:
+      platform: Tableau
+      workbook: Superstore
+      path: Superstore/Customers/Superstore
+    label: Customers
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Superstore/Customers
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: superstore__orderdetails__superstore__order_details
+    meta:
+      platform: Tableau
+      workbook: Superstore
+      path: Superstore/OrderDetails/Superstore
+    label: Order Details
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Superstore/OrderDetails
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: superstore__overview__superstore__overview
+    meta:
+      platform: Tableau
+      workbook: Superstore
+      path: Superstore/Overview/Superstore
+    label: Overview
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Superstore/Overview
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: superstore__product__superstore__product
+    meta:
+      platform: Tableau
+      workbook: Superstore
+      path: Superstore/Product/Superstore
+    label: Product
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Superstore/Product
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
+  - name: superstore__shipping__superstore__shipping
+    meta:
+      platform: Tableau
+      workbook: Superstore
+      path: Superstore/Shipping/Superstore
+    label: Shipping
+    url: https://eu-west-1a.online.tableau.com//#/site/elementarydemo/views/Superstore/Shipping
+    type: dashboard
+    owner:
+      name: Idan Shavit
+      email: idan@elementary-data.com
