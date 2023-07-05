@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: stats_team
+    columns:
+      - name: DRIBBLES
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                description: The DRIBBLES column in the stats_team table should not contain null values
