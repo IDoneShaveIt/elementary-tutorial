@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: stats_team
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 3
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          where_expression: my where
+          seasonality: day_of_week
+          timestamp_column: collie
+          config:
+            severity: error
+          meta:
+            owner:
+              - my own
+            description: Checking for freshness anomalies by looking at a 3 days period and comparing it to last 14 days
