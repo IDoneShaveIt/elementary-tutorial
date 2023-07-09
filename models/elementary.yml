@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: stats_team
+    columns:
+      - name: CLEARANCES_OFF_LINE
+        tests:
+          - unique:
+              config:
+                error_if: =2
+                warn_if: between 1 and 3
+              meta:
+                description: The CLEARANCES_OFF_LINE column in the stats_team table should contain only unique values
