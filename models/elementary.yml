@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: stats_team
+    columns:
+      - name: TEAM
+        tests:
+          - accepted_values:
+              values:
+                - 'false'
+                - '2'
+                - test
+              config:
+                severity: error
+              meta:
+                description: 'The TEAM column in the stats_team table should be one of the following values: false, 2, test'
