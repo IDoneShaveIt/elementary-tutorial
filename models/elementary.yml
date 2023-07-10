@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: stats_team
+    columns:
+      - name: CORNERS_TAKEN
+        tests:
+          - unique:
+              config:
+                error_if: '>3'
+              meta:
+                description: The CORNERS_TAKEN column in the stats_team table should contain only unique values
