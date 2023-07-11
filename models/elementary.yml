@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: stats_team
+    columns:
+      - name: RED_CARDS
+        tests:
+          - accepted_values:
+              values:
+                - val2
+                - val1
+              config:
+                tags:
+                  - marketing
+                error_if: between 2 and 3
+                warn_if: '>1'
+              meta:
+                owner:
+                  - nimrod+333@shaked.dev
+                description: 'The RED_CARDS column in the stats_team table should be one of the following values: val2, val1'
