@@ -1,0 +1,38 @@
+version: 2
+models:
+  - name: backfill_days_column_anomalies
+    tests:
+      - elementary.dimension_anomalies:
+          time_bucket:
+            period: hour
+            count: 30
+          sensitivity: 2
+          days_back: 2
+          backfill_days: 3
+          where_expression: sad
+          timestamp_column: mycol2
+          dimensions:
+            - val1
+            - val2
+          config:
+            severity: warn
+          meta:
+            description: Checking for anomalies in the values distribution of the mycol2 column by looking at a 30 hours period and comparing it to the last 2 days
+  - name: copy_numeric_column_anomalies
+    tests:
+      - elementary.dimension_anomalies:
+          time_bucket:
+            period: hour
+            count: 30
+          sensitivity: 2
+          days_back: 2
+          backfill_days: 3
+          where_expression: sad
+          timestamp_column: mycol2
+          dimensions:
+            - val1
+            - val2
+          config:
+            severity: warn
+          meta:
+            description: Checking for anomalies in the values distribution of the mycol2 column by looking at a 30 hours period and comparing it to the last 2 days
