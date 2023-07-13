@@ -1,0 +1,1777 @@
+version: 2
+models:
+  - name: stats_team
+    columns:
+      - name: TEAM
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: RED_CARDS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: DRIBBLES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PENALTY_GOALS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: CORNERS_TAKEN
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SAVES_MADE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PLAYERS_USED
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: OFFSIDES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: CROSSES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SHOTS_OFF_TARGET
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: FOULS_CONCEDED
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: CLEARANCES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: CLEARANCES_OFF_LINE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SHOTS_ON_TARGET
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: TOTAL_SHOTS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PASSES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SUBS_ON
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: GOALS_CONCEDED
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: INTERCEPTIONS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PENALTIES_NOT_SCORED
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: CLEAN_SHEETS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: FOULS_WON
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: TACKLES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PASSES_COMPLETED
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: HEADED_GOALS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: GOALS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: HIT_WOODWORK
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: YELLOW_CARDS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: TOUCHES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SUBS_OFF
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: BLOCKS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: copy_numeric_column_anomalies
+    columns:
+      - name: VARIANCE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SUM
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MIN
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: AVERAGE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MAX
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: STANDARD_DEVIATION
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: ZERO_PERCENT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: ZERO_COUNT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: OCCURRED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: one
+    columns:
+      - name: ONE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: users_per_day_weekly_seasonal
+    columns:
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: USER_ID
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: dimension_anomalies
+    columns:
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PLATFORM
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: VERSION
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: USER_ID
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: stats_players
+    columns:
+      - name: RED_CARDS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: GOALS_CONCEDED
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PLAYER
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: PASSES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: KEY_CROSSES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: TACKLES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: TEAM
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SAVES_MADE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: YELLOW_CARDS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: GOALS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: INTERCEPTIONS
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: CROSSES
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SHOTS_ON_TARGET
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: SHOTS_WITHOUT_SCORING
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: groups
+    columns:
+      - name: GROUP_B
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: GROUP_C
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: GROUP_D
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: no_timestamp_anomalies
+    columns:
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_BOOL
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_FLOAT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_BOOL
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_INT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_STR
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_STR
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: OCCURRED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_INT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_FLOAT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: numeric_column_anomalies
+    columns:
+      - name: SUM
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MAX
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: AVERAGE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: ZERO_PERCENT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MIN
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: VARIANCE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: STANDARD_DEVIATION
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: OCCURRED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: ZERO_COUNT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: string_column_anomalies
+    columns:
+      - name: MIN_LENGTH
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: AVERAGE_LENGTH
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: OCCURRED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MAX_LENGTH
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MISSING_COUNT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: MISSING_PERCENT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: any_type_column_anomalies
+    columns:
+      - name: NULL_PERCENT_STR
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: OCCURRED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_FLOAT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_BOOL
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_FLOAT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_STR
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_PERCENT_INT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_INT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: NULL_COUNT_BOOL
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+      - name: UPDATED_AT
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
+  - name: nested
+    columns:
+      - name: ONE
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - no_timestamp
+                  - numeric_column_anomalies
+                  - regular_tests
+                  - marketing
+                severity: error
+              meta:
+                owner:
+                  - '@elon'
+                  - egk
+                  - world
+                  - hadar+1@elementary-data.com
+                  - '@egk'
