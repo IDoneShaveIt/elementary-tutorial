@@ -49,7 +49,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -72,6 +72,13 @@ models:
               min_value: "'2023-01-01 00:00:00'"
               max_value: "{{ dbt_date.now() }}"
 
+      - name: CUSTOMER_ID
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
   - name: orders
     meta:
       owner: "@oravidov"
@@ -151,6 +158,20 @@ models:
         description: Amount of the order (AUD) paid for by gift card
 
 
+      - name: CUSTOMER_ID
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
+      - name: ORDER_ID
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
 exposures:
   - name: orders_dashboard
     type: application
