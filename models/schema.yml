@@ -49,7 +49,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -114,6 +114,17 @@ models:
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
 
+      - name: ORDER_ID
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - finance
+                severity: error
+              meta:
+                owner:
+                  - maayan+1337@elementary-data.com
+                description: The column should not contain null values
   - name: returned_orders
     description: This table contains all of the returned orders
     config:
@@ -151,6 +162,17 @@ models:
         description: Amount of the order (AUD) paid for by gift card
 
 
+      - name: ORDER_ID
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - finance
+                severity: error
+              meta:
+                owner:
+                  - maayan+1337@elementary-data.com
+                description: The column should not contain null values
 exposures:
   - name: orders_dashboard
     type: application
