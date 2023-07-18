@@ -14,6 +14,17 @@ models:
       - name: order_id
       - name: status
 
+      - name: ORDER_ID
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - finance
+                severity: error
+              meta:
+                owner:
+                  - maayan+1337@elementary-data.com
+                description: The column should not contain null values
   - name: stg_payments
     config:
       tags: ["staging", "finance"]
@@ -21,6 +32,17 @@ models:
       - name: payment_id
       - name: payment_method
 
+      - name: ORDER_ID
+        tests:
+          - not_null:
+              config:
+                tags:
+                  - finance
+                severity: error
+              meta:
+                owner:
+                  - maayan+1337@elementary-data.com
+                description: The column should not contain null values
   - name: stg_signups
     config:
       tags: ["staging", "PII"]
