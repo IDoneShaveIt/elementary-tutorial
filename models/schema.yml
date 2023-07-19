@@ -49,7 +49,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -151,6 +151,17 @@ models:
         description: Amount of the order (AUD) paid for by gift card
 
 
+      - name: ORDER_ID
+        tests:
+          - unique:
+              config:
+                tags:
+                  - stability
+                severity: error
+              meta:
+                owner:
+                  - idan+987@elementary-data.com
+                description: The ORDER_ID column in the returned_orders table should contain only unique values
 exposures:
   - name: orders_dashboard
     type: application
