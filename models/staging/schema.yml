@@ -7,6 +7,24 @@ models:
     columns:
       - name: customer_id
 
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: updated_at
+          config:
+            tags:
+              - stability
+              - staging
+            severity: error
+          meta:
+            owner:
+              - '@maayan'
+            description: Checking for freshness anomalies by looking at a 1 hours period and comparing it to last 14 days
   - name: stg_orders
     config:
       tags: ["staging", "finance"]
@@ -14,6 +32,24 @@ models:
       - name: order_id
       - name: status
 
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: updated_at
+          config:
+            tags:
+              - stability
+              - staging
+            severity: error
+          meta:
+            owner:
+              - '@maayan'
+            description: Checking for freshness anomalies by looking at a 1 hours period and comparing it to last 14 days
   - name: stg_payments
     config:
       tags: ["staging", "finance"]
@@ -21,9 +57,45 @@ models:
       - name: payment_id
       - name: payment_method
 
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: updated_at
+          config:
+            tags:
+              - stability
+              - staging
+            severity: error
+          meta:
+            owner:
+              - '@maayan'
+            description: Checking for freshness anomalies by looking at a 1 hours period and comparing it to last 14 days
   - name: stg_signups
     config:
       tags: ["staging", "PII"]
     columns:
       - name: signup_id
       - name: customer_email
+    tests:
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: hour
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: updated_at
+          config:
+            tags:
+              - stability
+              - staging
+            severity: error
+          meta:
+            owner:
+              - '@maayan'
+            description: Checking for freshness anomalies by looking at a 1 hours period and comparing it to last 14 days
