@@ -36,6 +36,11 @@ models:
                 severity: warn
           - dbt.unique:
               tags: ["stability"]
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
 
       - name: first_name
         description: Customer's first name. PII.
@@ -49,7 +54,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -90,9 +95,21 @@ models:
       - name: order_id
         description: This is a unique identifier for an order
 
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
       - name: customer_id
         description: Foreign key to the customers table
 
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
       - name: order_date
         description: Date (UTC) that the order was placed
 
@@ -123,9 +140,21 @@ models:
       - name: order_id
         description: This is a unique identifier for an order
 
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
       - name: customer_id
         description: Foreign key to the customers table
 
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                description: The column should contain only unique values
       - name: order_date
         description: Date (UTC) that the order was placed
 
