@@ -1,0 +1,42 @@
+version: 2
+models:
+  - name: lost_orders
+    columns:
+      - name: customer_id
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should contain only unique values
+      - name: order_id
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should contain only unique values
+  - name: order_items
+    columns:
+      - name: customer_id
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should contain only unique values
+      - name: order_id
+        tests:
+          - unique:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should contain only unique values
