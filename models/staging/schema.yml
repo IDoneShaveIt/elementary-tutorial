@@ -7,23 +7,82 @@ models:
     columns:
       - name: customer_id
 
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
   - name: stg_orders
     config:
       tags: ["staging", "finance"]
     columns:
       - name: order_id
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: status
 
+      - name: customer_id
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
   - name: stg_payments
     config:
       tags: ["staging", "finance"]
     columns:
       - name: payment_id
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: payment_method
 
+      - name: order_id
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
   - name: stg_signups
     config:
       tags: ["staging", "PII"]
     columns:
       - name: signup_id
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: customer_email
+      - name: customer_id
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values

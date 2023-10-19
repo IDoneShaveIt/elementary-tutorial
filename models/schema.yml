@@ -36,6 +36,13 @@ models:
                 severity: warn
           - dbt.unique:
               tags: ["stability"]
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
 
       - name: first_name
         description: Customer's first name. PII.
@@ -49,7 +56,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -90,9 +97,25 @@ models:
       - name: order_id
         description: This is a unique identifier for an order
 
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: customer_id
         description: Foreign key to the customers table
 
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: order_date
         description: Date (UTC) that the order was placed
 
@@ -123,9 +146,25 @@ models:
       - name: order_id
         description: This is a unique identifier for an order
 
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: customer_id
         description: Foreign key to the customers table
 
+        tests:
+          - not_null:
+              config:
+                severity: error
+              meta:
+                owner:
+                  - Maayan
+                description: The column should not contain null values
       - name: order_date
         description: Date (UTC) that the order was placed
 
