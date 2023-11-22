@@ -7,6 +7,16 @@ models:
     columns:
       - name: customer_id
 
+    tests:
+      - elementary.schema_changes:
+          config:
+            tags:
+              - stability
+            severity: error
+          meta:
+            owner:
+              - Maayan
+            description: Checks for schema changes against an existing baseline
   - name: stg_orders
     config:
       tags: ["staging", "finance"]
@@ -14,6 +24,16 @@ models:
       - name: order_id
       - name: status
 
+    tests:
+      - elementary.schema_changes:
+          config:
+            tags:
+              - stability
+            severity: error
+          meta:
+            owner:
+              - Maayan
+            description: Checks for schema changes against an existing baseline
   - name: stg_payments
     config:
       tags: ["staging", "finance"]
@@ -21,9 +41,29 @@ models:
       - name: payment_id
       - name: payment_method
 
+    tests:
+      - elementary.schema_changes:
+          config:
+            tags:
+              - stability
+            severity: error
+          meta:
+            owner:
+              - Maayan
+            description: Checks for schema changes against an existing baseline
   - name: stg_signups
     config:
       tags: ["staging", "PII"]
     columns:
       - name: signup_id
       - name: customer_email
+    tests:
+      - elementary.schema_changes:
+          config:
+            tags:
+              - stability
+            severity: error
+          meta:
+            owner:
+              - Maayan
+            description: Checks for schema changes against an existing baseline
