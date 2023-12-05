@@ -49,7 +49,7 @@ models:
         description: Customer's last name. PII.
         tests:
           - dbt_expectations.expect_column_to_exist
-          
+
       - name: first_order
         description: Date (UTC) of a customer's first order
 
@@ -86,6 +86,20 @@ models:
           dimensions:
             - status
 
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+          sensitivity: 3
+          days_back: 14
+          backfill_days: 2
+          timestamp_column: created_at
+          config:
+            tags:
+              - sales
+            severity: error
+          meta:
+            description: Checking for freshness anomalies by looking at a 1 days period and comparing it to last 14 days
     columns:
       - name: order_id
         description: This is a unique identifier for an order
